@@ -1,0 +1,5 @@
+.rt-calendar-week {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

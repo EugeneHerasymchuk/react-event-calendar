@@ -1,18 +1,24 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import CalendarWeek from './components/CalendarWeek/CalendarWeek';
+
 import './App.css';
 
 class App extends Component {
+  state = {
+    workingTime: [9, 17],
+    weekStart: 0,
+    busyHours: {
+      0: [9, 10]
+    }
+  };
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <CalendarWeek
+          workingTime={this.state.workingTime}
+          weekStart={this.state.weekStart}
+          busyHours={this.state.busyHours}
+        />
       </div>
     );
   }
