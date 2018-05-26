@@ -10,6 +10,10 @@ const CalendarWeek = ({ workingTime, weekStart, busyHours }) => {
       <CalendarDay />
       <CalendarDay />
       <CalendarDay />
+      <CalendarDay />
+      <CalendarDay />
+      <CalendarDay />
+      <CalendarDay />
     </div>
   );
 };
