@@ -10,7 +10,8 @@ class App extends Component {
     busyHours: {
       0: [9, 10],
       4: [13, 14]
-    }
+    },
+    daysOff: [0, 6]
   };
   render() {
     return (
@@ -19,6 +20,7 @@ class App extends Component {
           workingTime={this.state.workingTime}
           weekStart={this.state.weekStart}
           busyHours={this.state.busyHours}
+          daysOff={this.state.daysOff}
         />
       </div>
     );

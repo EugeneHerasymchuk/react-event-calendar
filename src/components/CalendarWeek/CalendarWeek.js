@@ -3,8 +3,13 @@ import PropTypes from 'prop-types';
 import CalendarDay from '../CalendarDay/CalendarDay';
 import './CalendarWeek.css';
 
-const CalendarWeek = ({ workingTime, weekStart, busyHours }) => {
-  console.log(workingTime, weekStart, busyHours);
+const CalendarWeek = ({
+  workingTime,
+  weekStart = 0,
+  busyHours = {},
+  daysOff = []
+}) => {
+  console.log(workingTime, weekStart, busyHours, daysOff);
 
   const weekDays = {
     0: 'Monday',
@@ -30,6 +35,7 @@ const CalendarWeek = ({ workingTime, weekStart, busyHours }) => {
         workingTime={workingTime}
         dayName={weekDays[key]}
         busyHours={busyHours[key]}
+        isOff={daysOff.includes(key)}
       />
     );
   });
@@ -38,14 +44,16 @@ const CalendarWeek = ({ workingTime, weekStart, busyHours }) => {
 
 /*
   workingTime - The array of two numbers for defining the start and end hours
-  weekStart: - Index of the day when week should start. 0 - Monday, 6 - Sunday
-  busyHours: - Object with index of days as keys and arrays of checked hours as values
+  weekStart: (not Required) - Index of the day when week should start. 0 - Monday, 6 - Sunday
+  busyHours: (not Required) - Object with index of days as keys and arrays of checked hours as values
+  daysOff: (not Required) - Array with days off
  */
 
 CalendarWeek.propTypes = {
   workingTime: PropTypes.arrayOf(PropTypes.number).isRequired,
-  weekStart: PropTypes.number.isRequired,
-  busyHours: PropTypes.object
+  weekStart: PropTypes.number,
+  busyHours: PropTypes.object,
+  daysOff: PropTypes.array
 };
 
 export default CalendarWeek;
