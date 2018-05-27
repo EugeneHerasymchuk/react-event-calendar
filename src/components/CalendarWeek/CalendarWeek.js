@@ -5,17 +5,28 @@ import './CalendarWeek.css';
 
 const CalendarWeek = ({ workingTime, weekStart, busyHours }) => {
   console.log(workingTime, weekStart, busyHours);
-  return (
-    <div className="rt-calendar-week">
-      <CalendarDay />
-      <CalendarDay />
-      <CalendarDay />
-      <CalendarDay />
-      <CalendarDay />
-      <CalendarDay />
-      <CalendarDay />
-    </div>
-  );
+
+  const weekDays = {
+    0: 'Monday',
+    1: 'Tuesday',
+    2: 'Wednesday',
+    3: 'Thursday',
+    4: 'Friday',
+    5: 'Saturday',
+    6: 'Sunday'
+  };
+
+  const weekKeys = [0, 1, 2, 3, 4, 5, 6];
+
+  const userKeys = [
+    weekStart === 0 ? weekKeys.shift() : weekKeys.pop(),
+    ...weekKeys
+  ];
+
+  const userDays = userKeys.map(key => {
+    return <CalendarDay key={key} dayName={weekDays[key]} />;
+  });
+  return <div className="rt-calendar-week">{userDays}</div>;
 };
 
 /*

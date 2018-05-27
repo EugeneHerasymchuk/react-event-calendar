@@ -1,17 +1,19 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import DayHeader from './DayHeader/DayHeader';
 
 import './CalendarDay.css';
 
-const CalendarDay = () => {
+const CalendarDay = ({ dayName }) => {
   return (
     <div className="rt-calendar-day">
-      <DayHeader />
+      <DayHeader name={dayName} />
     </div>
   );
 };
 
-CalendarDay.propTypes = {};
+CalendarDay.propTypes = {
+  dayName: PropTypes.string.isRequired
+};
 
 export default CalendarDay;

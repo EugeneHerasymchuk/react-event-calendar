@@ -6,7 +6,7 @@ import './App.css';
 class App extends Component {
   state = {
     workingTime: [9, 17],
-    weekStart: 0,
+    weekStart: 6,
     busyHours: {
       0: [9, 10]
     }
