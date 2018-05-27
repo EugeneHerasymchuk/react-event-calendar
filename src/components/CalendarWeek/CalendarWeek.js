@@ -29,6 +29,7 @@ const CalendarWeek = ({ workingTime, weekStart, busyHours }) => {
         key={key}
         workingTime={workingTime}
         dayName={weekDays[key]}
+        busyHours={busyHours[key]}
       />
     );
   });

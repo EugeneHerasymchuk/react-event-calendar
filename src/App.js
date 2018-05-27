@@ -8,7 +8,8 @@ class App extends Component {
     workingTime: [9, 17],
     weekStart: 0,
     busyHours: {
-      0: [9, 10]
+      0: [9, 10],
+      4: [13, 14]
     }
   };
   render() {

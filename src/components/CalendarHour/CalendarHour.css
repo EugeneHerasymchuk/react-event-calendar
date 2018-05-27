@@ -2,5 +2,12 @@
     width: 90%;
     margin: 5px auto;
     height: 40px;
+}
+
+.rt-working-hour {
     background-color: #52ff52;
+}
+
+.rt-busy-hour {
+    background-color: #8f8283;
 }

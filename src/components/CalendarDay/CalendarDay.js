@@ -5,13 +5,13 @@ import CalendarHour from '../CalendarHour/CalendarHour';
 
 import './CalendarDay.css';
 
-const CalendarDay = ({ dayName, workingTime }) => {
+const CalendarDay = ({ dayName, workingTime, busyHours = [] }) => {
   const workingHours = [];
   for (let h = workingTime[0]; h < workingTime[1]; h++) {
     workingHours.push(h);
   }
   const hours = workingHours.map(hour => (
-    <CalendarHour key={hour} hour={hour} />
+    <CalendarHour key={hour} hour={hour} isBusy={busyHours.includes(hour)} />
   ));
   return (
     <div className="rt-calendar-day">
@@ -23,7 +23,8 @@ const CalendarDay = ({ dayName, workingTime }) => {
 
 CalendarDay.propTypes = {
   dayName: PropTypes.string.isRequired,
-  workingTime: PropTypes.arrayOf(PropTypes.number).isRequired
+  workingTime: PropTypes.arrayOf(PropTypes.number).isRequired,
+  busyHours: PropTypes.object
 };
 
 export default CalendarDay;
