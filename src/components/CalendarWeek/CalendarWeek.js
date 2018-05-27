@@ -7,10 +7,9 @@ const CalendarWeek = ({
   workingTime,
   weekStart = 0,
   busyHours = {},
-  daysOff = []
+  daysOff = [],
+  onClick = () => {}
 }) => {
-  console.log(workingTime, weekStart, busyHours, daysOff);
-
   const weekDays = {
     0: 'Monday',
     1: 'Tuesday',
@@ -36,6 +35,7 @@ const CalendarWeek = ({
         dayName={weekDays[key]}
         busyHours={busyHours[key]}
         isOff={daysOff.includes(key)}
+        onClick={(clickedHour) => onClick(key, clickedHour)}
       />
     );
   });
@@ -53,7 +53,8 @@ CalendarWeek.propTypes = {
   workingTime: PropTypes.arrayOf(PropTypes.number).isRequired,
   weekStart: PropTypes.number,
   busyHours: PropTypes.object,
-  daysOff: PropTypes.array
+  daysOff: PropTypes.array,
+  onClick: PropTypes.func
 };
 
 export default CalendarWeek;

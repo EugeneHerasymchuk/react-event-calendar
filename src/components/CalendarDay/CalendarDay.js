@@ -5,7 +5,13 @@ import CalendarHour from '../CalendarHour/CalendarHour';
 
 import './CalendarDay.css';
 
-const CalendarDay = ({ dayName, workingTime, busyHours = [], isOff = false }) => {
+const CalendarDay = ({
+  dayName,
+  workingTime,
+  busyHours = [],
+  isOff = false,
+  onClick
+}) => {
   const workingHours = [];
   for (let h = workingTime[0]; h < workingTime[1]; h++) {
     workingHours.push(h);
@@ -16,6 +22,7 @@ const CalendarDay = ({ dayName, workingTime, busyHours = [], isOff = false }) =>
       hour={hour}
       dayOff={isOff}
       isBusy={!!busyHours.length && busyHours.includes(hour)}
+      onClick={onClick}
     />
   ));
   return (
@@ -30,7 +37,8 @@ CalendarDay.propTypes = {
   dayName: PropTypes.string.isRequired,
   workingTime: PropTypes.arrayOf(PropTypes.number).isRequired,
   busyHours: PropTypes.arrayOf(PropTypes.number),
-  isOff: PropTypes.bool
+  isOff: PropTypes.bool,
+  onClick: PropTypes.func
 };
 
 export default CalendarDay;

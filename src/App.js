@@ -11,7 +11,11 @@ class App extends Component {
       0: [9, 10],
       4: [13, 14]
     },
-    daysOff: [0, 6]
+    daysOff: [1, 6]
+  };
+
+  handleClickEvent = (clickedDay, clickedHour) => {
+    console.log('clicked', clickedHour, clickedDay);
   };
   render() {
     return (
@@ -21,6 +25,7 @@ class App extends Component {
           weekStart={this.state.weekStart}
           busyHours={this.state.busyHours}
           daysOff={this.state.daysOff}
+          onClick={this.handleClickEvent}
         />
       </div>
     );

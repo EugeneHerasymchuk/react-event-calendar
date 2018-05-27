@@ -10,8 +10,10 @@
 
 .rt-busy-hour {
     background-color: #00d81a;
+    cursor: not-allowed;
 }
 
 .rt-day-off {
     background-color: #c0c3b6;
+    cursor: not-allowed;
 }
