@@ -17,7 +17,7 @@ const CalendarHour = ({ hour, isBusy = false, dayOff, onClick }) => {
       }}
       className={classes.join(' ')}
     >
-      {hour} - {hour + 1}
+      {dayOff ? 'x' : `${hour}:00 - ${hour + 1}:00`}
     </div>
   );
 };

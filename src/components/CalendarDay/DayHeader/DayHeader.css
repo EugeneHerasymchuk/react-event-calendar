@@ -1,6 +1,7 @@
 .rt-calendar-day-header {
-    background-color: #ff8b6e38;
     width: 90%;
     height: 50px;
     margin: 0 auto;
+    line-height: 50px;
+    color: #555;
 }
