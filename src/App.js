@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import CalendarWeek from './components/CalendarWeek/CalendarWeek';
 
-import './App.css';
-
 class App extends Component {
   state = {
     workingTime: [8, 18],
@@ -25,10 +23,16 @@ class App extends Component {
 
   handleClickEvent = (clickedDay, clickedHour) => {
     alert(`clicked ${clickedHour} ${clickedDay}`);
+    this.setState({
+      busyHours: {
+        ...this.state.busyHours,
+        [clickedDay]: [...(this.state.busyHours[clickedDay] || []), clickedHour]
+      }
+    });
   };
   render() {
     return (
-      <div className="App">
+      <div>
         <CalendarWeek
           weekDays={this.state.weekDays}
           workingTime={this.state.workingTime}

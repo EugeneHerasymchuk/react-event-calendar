@@ -16,6 +16,7 @@ const CalendarDay = ({
   for (let h = workingTime[0]; h < workingTime[1]; h++) {
     workingHours.push(h);
   }
+
   const hours = workingHours.map(hour => (
     <CalendarHour
       key={hour}

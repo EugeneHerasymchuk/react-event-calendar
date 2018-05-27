@@ -23,10 +23,7 @@ const CalendarWeek = ({
 }) => {
   const weekKeys = [0, 1, 2, 3, 4, 5, 6];
 
-  const userKeys = [
-    weekStart ? weekKeys.shift() : weekKeys.pop(),
-    ...weekKeys
-  ];
+  const userKeys = [weekStart ? weekKeys.shift() : weekKeys.pop(), ...weekKeys];
 
   const userDays = userKeys.map(key => {
     return (
@@ -37,7 +34,8 @@ const CalendarWeek = ({
           {
             ...defaultDays,
             ...weekDays
-          }[key]}
+          }[key]
+        }
         busyHours={busyHours[key]}
         isOff={daysOff.includes(key)}
         onClick={clickedHour => onClick(key, clickedHour)}
