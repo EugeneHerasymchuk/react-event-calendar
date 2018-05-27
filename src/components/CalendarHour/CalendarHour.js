@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import './CalendarHour.css';
 
-const CalendarHour = ({ hour, isBusy = false, dayOff, onClick }) => {
+const CalendarHour = ({ hour, isBusy = false, dayOff = false, onClick }) => {
   const classes = [
     'rt-calendar-hour',
     dayOff ? 'rt-day-off' : isBusy ? 'rt-busy-hour' : 'rt-working-hour'

@@ -12,7 +12,4 @@ describe('DayHeader', () => {
 
     expect(wrapper.text()).toEqual(title);
   });
-  // it('should throw error if the title of the Day is missing', () => {
-  //
-  // });
 });
