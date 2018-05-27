@@ -5,9 +5,13 @@
 }
 
 .rt-working-hour {
-    background-color: #52ff52;
+    background-color: #b2ffae;
 }
 
 .rt-busy-hour {
-    background-color: #8f8283;
+    background-color: #00d81a;
+}
+
+.rt-day-off {
+    background-color: #c0c3b6;
 }

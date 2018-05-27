@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 
 import './CalendarHour.css';
 
-const CalendarHour = ({ hour, isBusy = false }) => {
+const CalendarHour = ({ hour, isBusy = false, dayOff }) => {
   const classes = [
     'rt-calendar-hour',
-    isBusy ? 'rt-busy-hour' : 'rt-working-hour'
+    dayOff ? 'rt-day-off' : isBusy ? 'rt-busy-hour' : 'rt-working-hour'
   ];
   return (
     <div className={classes.join(' ')}>
@@ -17,7 +17,8 @@ const CalendarHour = ({ hour, isBusy = false }) => {
 
 CalendarHour.propTypes = {
   hour: PropTypes.number.isRequired,
-  isBusy: PropTypes.bool
+  isBusy: PropTypes.bool,
+  dayOff: PropTypes.bool
 };
 
 export default CalendarHour;
