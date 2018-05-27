@@ -24,7 +24,13 @@ const CalendarWeek = ({ workingTime, weekStart, busyHours }) => {
   ];
 
   const userDays = userKeys.map(key => {
-    return <CalendarDay key={key} dayName={weekDays[key]} />;
+    return (
+      <CalendarDay
+        key={key}
+        workingTime={workingTime}
+        dayName={weekDays[key]}
+      />
+    );
   });
   return <div className="rt-calendar-week">{userDays}</div>;
 };
