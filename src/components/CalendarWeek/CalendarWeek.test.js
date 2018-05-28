@@ -9,7 +9,6 @@ configure({ adapter: new Adapter() });
 describe('CalendarWeek', () => {
   it('should render component with min inputs', () => {
     const wrapper = shallow(<CalendarWeek workingTime={[]} />);
-    console.log(wrapper.html());
+    expect(wrapper.find(CalendarDay)).toHaveLength(7);
   });
-  it("shouldn't render CalendarHours if there is no workingHours", () => {});
 });
