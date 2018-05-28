@@ -48,7 +48,7 @@ const CalendarWeek = ({
 /*
   workingTime - The array of two numbers for defining the start and end hours
   weekDays (not Required) - Object with Names for the days in week.
-  weekStart: (not Required) - Index of the day when week should start. 0 - Monday, 6 - Sunday
+  weekStart: (not Required) - Bool of the day when week should start.
   busyHours: (not Required) - Object with index of days as keys and arrays of checked hours as values
   daysOff: (not Required) - Array with days off
  */
