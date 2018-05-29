@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CalendarWeek from './components/CalendarWeek/CalendarWeek';
+import CalendarWeek from 'rt-event-calendar';
 
 class App extends Component {
   state = {
