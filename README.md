@@ -1,4 +1,4 @@
-## Demo projeect for [React Event Calendar](https://github.com/EugeneHerasymchuk/rt-event-calendar)
+## Demo project for [React Event Calendar](https://github.com/EugeneHerasymchuk/rt-event-calendar)
 A React based event calendar with simple API with the purpose to simplify the booking of hourly events.
 
 [LIVE DEMO](https://react-event-calendar.firebaseapp.com/)
