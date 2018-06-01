@@ -22,7 +22,7 @@ class App extends Component {
   };
 
   handleClickEvent = (clickedDay, clickedHour) => {
-    alert(`clicked ${clickedHour} ${clickedDay}`);
+    alert(`clicked ${clickedHour} in ${this.state.weekDays[clickedDay]}`);
     this.setState({
       busyHours: {
         ...this.state.busyHours,
